@@ -1,10 +1,13 @@
 <?php
 
+namespace Lexik\Bundle\DataLayerBundle\Tests\Functional\Collector;
+
+use Lexik\Bundle\DataLayerBundle\Tests\Functional\TestCase;
 
 /**
  * CollectorChainTest
  */
-class CollectorChainTest extends \Lexik\Bundle\DataLayerBundle\Tests\Functional\TestCase
+class CollectorChainTest extends TestCase
 {
     /**
      * test tagged collectors are correctly injected into the collector chain
