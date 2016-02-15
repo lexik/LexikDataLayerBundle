@@ -1,0 +1,15 @@
+framework:
+    secret: test
+    session:
+        handler_id: ~
+    router:
+        resource: %kernel.root_dir%/config/routing.yml
+
+security:
+    providers:
+        in_memory:
+            memory:
+    firewalls:
+        login:
+            pattern:  ^/
+            form_login: ~

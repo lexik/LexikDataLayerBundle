@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="lexik_data_layer.collector.collector_chain.class">Lexik\Bundle\DataLayerBundle\Collector\CollectorChain</parameter>
+        <parameter key="lexik_data_layer.collector.user_id.class">Lexik\Bundle\DataLayerBundle\Collector\UserIdCollector</parameter>
+        <parameter key="lexik_data_layer.manager.data_layer_manager.class">Lexik\Bundle\DataLayerBundle\Manager\DataLayerManager</parameter>
+        <parameter key="lexik_data_layer.twig.extension.class">Lexik\Bundle\DataLayerBundle\Twig\Extension\DataLayerExtension</parameter>
+    </parameters>
+    <services>
+        <!-- COLLECTOR CHAIN -->
+        <service id="lexik_data_layer.collector.collector_chain" class="%lexik_data_layer.collector.collector_chain.class%" />
+        <!-- USER ID COLLECTOR -->
+        <service id="lexik_data_layer.collector.user_id" class="%lexik_data_layer.collector.user_id.class%">
+            <argument type="service" id="security.token_storage" />
+            <tag name="lexik_data_layer.collector" />
+        </service>
+        <!-- MANAGER -->
+        <service id="lexik_data_layer.manager.data_layer_manager" class="%lexik_data_layer.manager.data_layer_manager.class%">
+            <argument type="service" id="session" />
+            <argument type="service" id="lexik_data_layer.collector.collector_chain" />
+        </service>
+        <!-- TWIG -->
+        <service id="lexik_data_layer.twig.extension" class="%lexik_data_layer.twig.extension.class%">
+            <argument type="service" id="lexik_data_layer.manager.data_layer_manager" />
+            <tag name="twig.extension" />
+        </service>
+    </services>
+</container>
