@@ -1,6 +1,10 @@
 LexikDataLayerBundle
 ====================
 
+[![Build Status](https://travis-ci.org/lexik/LexikDataLayerBundle.svg?branch=master)](https://travis-ci.org/lexik/LexikDataLayerBundle)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lexik/LexikDataLayerBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lexik/LexikDataLayerBundle/?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/4d91d8a5-3a7f-423b-9c6f-5c161246a891/mini.png)](https://insight.sensiolabs.com/projects/4d91d8a5-3a7f-423b-9c6f-5c161246a891)
+
 Manipulate the Google Tag Manager Data Layer from your Symfony application. This bundle is compatible Symfony 2.7+ to 3.0+ and PHP 5.4+ to 7.0+.
 
 Installation
