@@ -30,7 +30,7 @@ public function registerBundles()
 Adding informations to the Data Layer
 -------------------------------------
 
-To pass informations to the Data Layer use the `add()` method of the `lexik_data_layer.manager.data_layer_manager` service.
+To pass informations to the Data Layer use the `lexik_data_layer.manager.data_layer_manager` service directly.
 
 #### Event / Session Data
 
@@ -40,8 +40,9 @@ Notify an application event that could be used as goal or conversion like a user
 
 ##### Usage
 
-Simply get the service `lexik_data_layer.manager` and pass an associative array to it's add method, it will be stored in session
-until it is passed to a page... Much like a Flash Message. Using sessions as storage allows you to notify of an event even after a redirect for example.
+Get the service `lexik_data_layer.manager.data_layer_manager` and pass an associative array to it's `add()` method, it will be stored in session until it is passed to a page. Much like a Flash Message. 
+
+Using sessions as storage allows you to notify of an event even after a redirect for example.
 
 Example usage from an EventListener to notify a user registration :
 
@@ -95,7 +96,8 @@ Set the user id on every page for example.
 
 ##### Usage example
 
-Simply create a service implementing the `Lexik\Bundle\DataLayerBundle\Collector\CollectorInterface` and tag it using the `lexik_data_layer.collector` tag.
+Create a service implementing the `Lexik\Bundle\DataLayerBundle\Collector\CollectorInterface` and tag it using the `lexik_data_layer.collector` tag.
+
 It's `handle` method will be passed the current Data Layer array, which you can modify by adding or modifying its values.
 
 ```php
@@ -147,8 +149,9 @@ class UserIdCollector implements CollectorInterface
 
 ## Adding / Writing Data Layer variables to the page
 
-Use the provided `lexik_data_layer()` twig function to write the Data Layer variables to a page template. 
+Use the provided `lexik_data_layer()` twig function to write the Data Layer value to a page template. 
 This will automatically reset the Data Layer informations stored in session. 
+
 Don't forget to use it BEFORE you insert the Tag Manager tag.
 
 ```twig
