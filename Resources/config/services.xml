@@ -11,14 +11,14 @@
     </parameters>
     <services>
         <!-- COLLECTOR CHAIN -->
-        <service id="lexik_data_layer.collector.collector_chain" class="%lexik_data_layer.collector.collector_chain.class%" />
+        <service id="lexik_data_layer.collector.collector_chain" class="%lexik_data_layer.collector.collector_chain.class%" public="true" />
         <!-- USER ID COLLECTOR -->
         <service id="lexik_data_layer.collector.user_id" class="%lexik_data_layer.collector.user_id.class%">
             <argument type="service" id="security.token_storage" />
             <tag name="lexik_data_layer.collector" />
         </service>
         <!-- MANAGER -->
-        <service id="lexik_data_layer.manager.data_layer_manager" class="%lexik_data_layer.manager.data_layer_manager.class%">
+        <service id="lexik_data_layer.manager.data_layer_manager" class="%lexik_data_layer.manager.data_layer_manager.class%" public="true">
             <argument type="service" id="session" />
             <argument type="service" id="lexik_data_layer.collector.collector_chain" />
         </service>

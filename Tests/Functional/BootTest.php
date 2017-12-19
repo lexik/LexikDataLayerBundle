@@ -13,5 +13,8 @@ class BootTest extends TestCase
     {
         $kernel = $this->createKernel();
         $kernel->boot();
+
+        $this->assertSame('test', $kernel->getEnvironment());
+        $this->assertTrue($kernel->isDebug());
     }
 }

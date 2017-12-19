@@ -3,12 +3,13 @@
 namespace Lexik\Bundle\DataLayerBundle\Tests\Collector;
 
 use Lexik\Bundle\DataLayerBundle\Collector\UserIdCollector;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 /**
  * UserIdCollectorTest
  */
-class UserIdCollectorTest extends \PHPUnit_Framework_TestCase
+class UserIdCollectorTest extends TestCase
 {
     /**
      * test handle method works

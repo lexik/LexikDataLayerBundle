@@ -5,13 +5,14 @@ namespace Lexik\Bundle\DataLayerBundle\Tests\Service;
 use Lexik\Bundle\DataLayerBundle\Collector\CollectorChain;
 use Lexik\Bundle\DataLayerBundle\Collector\CollectorInterface;
 use Lexik\Bundle\DataLayerBundle\Manager\DataLayerManager;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * DataLayerManagerTest
  */
-class DataLayerManagerTest extends \PHPUnit_Framework_TestCase
+class DataLayerManagerTest extends TestCase
 {
     /**
      * test get method

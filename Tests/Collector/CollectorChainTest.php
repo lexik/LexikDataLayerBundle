@@ -3,11 +3,12 @@
 namespace Lexik\Bundle\DataLayerBundle\Tests\Collector;
 
 use Lexik\Bundle\DataLayerBundle\Collector\CollectorChain;
+use PHPUnit\Framework\TestCase;
 
 /**
  * CollectorChainTest
  */
-class CollectorChainTest extends \PHPUnit_Framework_TestCase
+class CollectorChainTest extends TestCase
 {
     /**
      * test default object
@@ -27,11 +28,11 @@ class CollectorChainTest extends \PHPUnit_Framework_TestCase
     {
         $chain = new CollectorChain();
 
-        $chain->addCollector($this->getMock('Lexik\Bundle\DataLayerBundle\Collector\CollectorInterface'));
+        $chain->addCollector($this->getMockBuilder('Lexik\Bundle\DataLayerBundle\Collector\UserIdCollector')->disableOriginalConstructor()->getMock());
         $this->assertInternalType('array', $chain->getCollectors());
         $this->assertCount(1, $chain->getCollectors());
 
-        $chain->addCollector($this->getMock('Lexik\Bundle\DataLayerBundle\Collector\CollectorInterface'));
+        $chain->addCollector($this->getMockBuilder('Lexik\Bundle\DataLayerBundle\Collector\CollectorInterface')->getMock());
         $this->assertInternalType('array', $chain->getCollectors());
         $this->assertCount(2, $chain->getCollectors());
     }

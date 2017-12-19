@@ -4,11 +4,12 @@ namespace Lexik\Bundle\DataLayerBundle\Tests\Twig\Extension;
 
 use Lexik\Bundle\DataLayerBundle\Manager\DataLayerManager;
 use Lexik\Bundle\DataLayerBundle\Twig\Extension\DataLayerExtension;
+use PHPUnit\Framework\TestCase;
 
 /**
  * DataLayerExtensionTest
  */
-class DataLayerExtensionTest extends \PHPUnit_Framework_TestCase
+class DataLayerExtensionTest extends TestCase
 {
     /**
      * test main twig function
@@ -20,7 +21,7 @@ class DataLayerExtensionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return DataLayerManager
+     * @return \PHPUnit_Framework_MockObject_MockObject|DataLayerManager
      */
     private function getManagerMock()
     {

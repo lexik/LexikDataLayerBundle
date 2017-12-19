@@ -44,5 +44,10 @@ class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(__DIR__.'/config/config.yml');
+        if (self::VERSION_ID >= 34001 && self::VERSION_ID < 40000) {
+            $loader->load(__DIR__.'/config/security34.yml');
+        } else {
+            $loader->load(__DIR__.'/config/security.yml');
+        }
     }
 }

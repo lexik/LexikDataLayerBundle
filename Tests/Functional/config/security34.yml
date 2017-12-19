@@ -1,0 +1,8 @@
+security:
+    providers:
+        in_memory:
+            memory:
+    firewalls:
+        main:
+            anonymous: ~
+            logout_on_user_change: true

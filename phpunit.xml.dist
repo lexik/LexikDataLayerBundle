@@ -11,6 +11,7 @@
          syntaxCheck="false"
          bootstrap="vendor/autoload.php"
         >
+
     <testsuites>
         <testsuite name="LexikDataLayerBundle Test Suite">
             <directory>./Tests/</directory>
@@ -30,5 +31,7 @@
 
     <php>
         <server name="ROOT_DIR" value="../../../../.." />
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
     </php>
+
 </phpunit>
