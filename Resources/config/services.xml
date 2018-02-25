@@ -12,6 +12,7 @@
     <services>
         <!-- COLLECTOR CHAIN -->
         <service id="lexik_data_layer.collector.collector_chain" class="%lexik_data_layer.collector.collector_chain.class%" public="true" />
+        <service id="%lexik_data_layer.collector.collector_chain.class%" alias="lexik_data_layer.collector.collector_chain" />
         <!-- USER ID COLLECTOR -->
         <service id="lexik_data_layer.collector.user_id" class="%lexik_data_layer.collector.user_id.class%">
             <argument type="service" id="security.token_storage" />
@@ -22,6 +23,7 @@
             <argument type="service" id="session" />
             <argument type="service" id="lexik_data_layer.collector.collector_chain" />
         </service>
+        <service id="%lexik_data_layer.manager.data_layer_manager.class%" alias="lexik_data_layer.manager.data_layer_manager" />
         <!-- TWIG -->
         <service id="lexik_data_layer.twig.extension" class="%lexik_data_layer.twig.extension.class%">
             <argument type="service" id="lexik_data_layer.manager.data_layer_manager" />
