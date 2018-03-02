@@ -1,6 +1,7 @@
 LexikDataLayerBundle
 ====================
 
+[![Latest Stable Version](https://poser.pugx.org/lexik/data-layer-bundle/v/stable)](https://packagist.org/packages/lexik/data-layer-bundle)
 [![Build Status](https://travis-ci.org/lexik/LexikDataLayerBundle.svg?branch=master)](https://travis-ci.org/lexik/LexikDataLayerBundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lexik/LexikDataLayerBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lexik/LexikDataLayerBundle/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/4d91d8a5-3a7f-423b-9c6f-5c161246a891/mini.png)](https://insight.sensiolabs.com/projects/4d91d8a5-3a7f-423b-9c6f-5c161246a891)
